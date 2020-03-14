@@ -1,0 +1,27 @@
+http://www.atoziq.com/2012/12/interview-questions-and-answers-for.html
+Interview Questions and answers for Hadoop
+19 Dec 2012 Labels: Hadoop 0 comments
+1.  What is the difference between a Hadoop database and Relational Database?
+2.  What is Hadoop framework?
+3.  On What concept the Hadoop framework works?
+4.  what is HDFS?
+5.  what is MAP REDUCE?
+6.  What Mapper does?
+7.  What is the InputSplit in map reduce software?
+8.  what is meaning Replication factor?
+9.  what is the default replication factor in HDFS?
+10. Which interface needs to be implemented to create Mapper and Reducer for the Hadoop?
+11. what is the typical block size of an HDFS block?
+12. what is namenode?
+13. How does master slave architecture in the Hadoop?
+14. What is compute and Storage nodes?
+15. Explain how input and output data format of the Hadoop framework?
+16. How can we control particular key should go in a specific reducer?
+17. What is the use of Combiner?
+18. What is the Reducer used for?
+19. What are the primary phases of the Reducer?
+20. Explain the shuffle?
+21. What happens if number of reducers are 0?
+22. How many instances of JobTracker can run on a Hadoop Cluser?
+23. How NameNode Handles data node failures?
+24. Can I set the number of reducers to zero?

@@ -1,0 +1,53 @@
+http://realiq.blogspot.in/2012/12/hadoop-interview-question.html 
+
+
+Hadoop Interview Question
+ Here are Some Hadoop Administration question you May expect.  answers you need to find.... :) i can give but i wont : if you find good answer share with me also :) hope you will right ? If you are not able to find let me know through comments i will post the answers too.
+
+
+What is Hadoop? Brief about the components of  Hadoop.
+What are the Hadoop daemon processes tell the components of Hadoop and functionality?
+Tell steps for configuring Hadoop?
+What is architecture of HDFS and flow?
+Can we have more than one configuration setting for Hadoop cluster how can you switch between these configurations?
+What will be your troubleshooting approach in Hadoop?
+What are the exceptions you have come through while working on Hadoop, what was your approach for getting rid of those exceptions or errors?
+ 
+How will you proceed if Namenode is down?
+What will be your approach if Datanode is down?
+How can you start the cluster?
+How can you stop the cluster?
+What is dfs.name.dir and dfs.data.dir is used for?
+What is SSH?
+What is password less SSH?
+Why do we need password less SSH in Hadoop?
+How can you transfer configuration files of Hadoop from one system to another system
+Have you ever come across bind exception while configuring cluster? How you solved it? Why it comes
+When do you get connection refused error? How can you solve this problem
+Have you ever come across "no route to host" error? If yes how you solved?
+What is socket timeout error? And where it effect in Hadoop cluster?
+How unknown host errors make sense to you?
+Could not replicate data have you ever come across this error if yes what is the probable reason behind it?
+What is heap memory? How we use it in Hadoop cluster?
+What is a zombie process in Linux?
+What zero size file problem in Hadoop and what is the reason behind it?
+What is over replicated, under replicated blocks give some scenarios
+Have you ever come across " too many file open error"
+How communication between clients-->Namenode->Datanode happens? Explain the steps by which file is send from client the HDFS.
+what configuration settings will you implement for HBase and hive with Hadoop
+Have you ever come across HMaster not running ?? If yes what was the reason and how you solved it?
+What are the daemon processes for HBase?
+What may be the problem behind region servers being not started.
+How many way you can execute queries in hive?
+Have you ever come across error when master initializes, but region servers do not. What solution did you synthesized from that?
+What is the role of JVM in Hadoop
+Have you heard about JPS command? How can you use it and what you need to install before using that command?
+ How can you configure a client for HBase? If yes what were the settings you used?
+What is zookeeper?
+How we can load table in hive?
+How can we start hive server?
+What is thrift server?
+Can you tell me basic syntax for connecting hive through JDBC ?
+What are no SQL databases how they differ from relational database, what are the NSQL databases you know?
+Have you ever come across java.lang.outofmemoryerror?
+How will you check if Hadoop Daemons(Namenode, Datanode, Jobtracker, Tasktracker, and Secondrynamenode) are running?

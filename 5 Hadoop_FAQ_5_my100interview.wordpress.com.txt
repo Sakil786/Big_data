@@ -1,0 +1,48 @@
+http://my100interview.wordpress.com/2012/05/16/introducing-hadoop/
+
+Introducing Hadoop
+POSTED ON MAY 16, 2012 BY AMIT NAGAR
+Hadoop is the Apache Software Foundation top-level project that holds the various Hadoop subprojects that graduated from the Apache Incubator. The Hadoop project provides and supports the development of open source software that supplies a framework for the development of highly scalable distributed computing applications. The Hadoop framework handles the processing details, leaving developers free to focus on application logic.
+
+The introduction on the Hadoop project web page (http://hadoop.apache.org/) states:
+
+The Apache Hadoop project develops open-source software for reliable, scalable, distributed computing, including:
+Hadoop Core, our flagship sub-project, provides a distributed filesystem (HDFS) and support for the MapReduce distributed computing metaphor.
+HBase builds on Hadoop Core to provide a scalable, distributed database.
+Pig is a high-level data-flow language and execution framework for parallel computation. It is built on top of Hadoop Core.
+ZooKeeper is a highly available and reliable coordination system. Distributed applications use ZooKeeper to store and mediate updates for critical shared state.
+Hive is a data warehouse infrastructure built on Hadoop Core that provides data summarization, adhoc querying and analysis of datasets.
+The Hadoop Core project provides the basic services for building a cloud computing environment with commodity hardware, and the APIs for developing software that will run on that cloud. The two fundamental pieces of Hadoop Core are the MapReduce framework, the cloud computing environment, and he Hadoop Distributed File System (HDFS).
+
+The Hadoop Core MapReduce framework requires a shared file system. This shared file system does not need to be a system-level file system, as long as there is a distributed file system plug-in available to the framework. While Hadoop Core provides HDFS, HDFS is not required. In Hadoop JIRA (the issue-tracking system), item 4686 is a tracking ticket to separate HDFS into its own Hadoop project. In addition to HDFS, Hadoop Core supports the CloudStore (formerly Kosmos) file system (http://kosmosfs.sourceforge.net/) and Amazon Simple Storage Service (S3) file system (http://aws.amazon.com/s3/). The Hadoop Core framework comes with plug-ins for HDFS, CloudStore, and S3. Users are also free to use any distributed file system that is visible as a system-mounted file system, such as Network File System (NFS), Global File System (GFS), or Lustre.
+
+When HDFS is used as the shared file system, Hadoop is able to take advantage of knowledge about which node hosts a physical copy of input data, and will attempt to schedule the task that is to read that data, to run on that machine. This book mainly focuses on using HDFS as the file system.
+
+Hadoop Core MapReduce
+The Hadoop Distributed File System (HDFS)MapReduce environment provides the user with a sophisticated framework to manage the execution of map and reduce tasks across a cluster of machines. The user is required to tell the framework the following:
+
+The location(s) in the distributed file system of the job input
+The location(s) in the distributed file system for the job output
+The input format
+The output format
+The class containing the map function
+Optionally. the class containing the reduce function
+The JAR file(s) containing the map and reduce functions and any support classes
+If a job does not need a reduce function, the user does not need to specify a reducer class, and a reduce phase of the job will not be run. The framework will partition the input, and schedule and execute map tasks across the cluster. If requested, it will sort the results of the map task and execute the reduce task(s) with the map output. The final output will be moved to the output directory, and the job status will be reported to the user.
+
+MapReduce is oriented around key/value pairs. The framework will convert each record of input into a key/value pair, and each pair will be input to the map function once. The map output is a set of key/value pairs—nominally one pair that is the transformed input pair, but it is perfectly acceptable to output multiple pairs. The map output pairs are grouped and sorted by key. The reduce function is called one time for each key, in sort sequence, with the key and the set of values that share that key. The reduce method may output an arbitrary number of key/value pairs, which are written to the output files in the job output directory. If the reduce output keys are unchanged from the reduce input keys, the final output will be sorted.
+
+The framework provides two processes that handle the management of MapReduce jobs:
+
+TaskTracker manages the execution of individual map and reduce tasks on a compute node in the cluster.
+JobTracker accepts job submissions, provides job monitoring and control, and manages the distribution of tasks to the TaskTracker nodes.
+Generally, there is one JobTracker process per cluster and one or more TaskTracker processes per node in the cluster. The JobTracker is a single point of failure, and the JobTracker will work around the failure of individual TaskTracker processes.
+
+The Hadoop Distributed File System
+HDFS is a file system that is designed for use for MapReduce jobs that read input in large chunks of input, process it, and write potentially large chunks of output. HDFS does not handle random access particularly well. For reliability, file data is simply mirrored to multiple storage nodes. This is referred to as replication in the Hadoop community. As long as at least one replica of a data chunk is available, the consumer of that data will not know of storage server failures.
+
+HDFS services are provided by two processes:
+
+NameNode handles management of the file system metadata, and provides management and control services.
+DataNode provides block storage and retrieval services.
+There will be one NameNode process in an HDFS file system, and this is a single point of failure. Hadoop Core provides recovery and automatic backup of the NameNode, but no hot failover services. There will be multiple DataNode processes within the cluster, with typically one DataNode process per storage node in a cluster.

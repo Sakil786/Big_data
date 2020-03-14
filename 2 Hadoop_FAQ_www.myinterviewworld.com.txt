@@ -1,0 +1,53 @@
+http://www.myinterviewworld.com/hadoop/questions_answers/learning/forum/1/1
+
+
+What is the difference between a Hadoop database and Relational Database?
+What is Hadoop framework?
+On What concept the Hadoop framework works?
+what is HDFS?
+what is MAP REDUCE?
+What Mapper does?
+What is the InputSplit in map reduce software?
+what is meaning Replication factor?
+what is the default replication factor in HDFS?
+Explain the WordCount implementation via Hadoop framework ?
+Which interface needs to be implemented to create Mapper and Reducer for the Hadoop?
+What is the InputFormat ?
+How does Mappers run() method works?
+what is the typical block size of an HDFS block?
+what is a datanode?	
+what is namenode?	
+How does master slave architecture in the Hadoop?
+What is compute and Storage nodes?
+How does an Hadoop application look like or their basic components?
+What are the restriction to the key and value class ?
+Explain how input and output data format of the Hadoop framework?
+Which object can be used to get the progress of a particular job ?
+How can we control particular key should go in a specific reducer?
+How many maps are there in a particular Job?
+What is the use of Combiner?
+What is the Reducer used for?
+What are the primary phases of the Reducer?
+Explain the shuffle?	
+Explain the Reducer's reduce phase?
+How many Reducers should be configured?
+It can be possible that a Job has 0 reducers?
+What happens if number of reducers are 0?
+How many instances of JobTracker can run on a Hadoop Cluser?
+Explain the Reducer?s Sort phase?
+Explain the core methods of the Reducer?
+What is next step after Mapper or MapTask?
+How can you add the arbitrary key-value pairs in your mapper?
+What is the use of Context object?
+What happens if you don?t override the Mapper methods and keep them as it is?
+Where do you specify the Mapper Implementation?	
+How Mapper is instantiated in a running job?
+What alternate way does HDFS provides to recover data in case a Namenode, without backup, fails and cannot be recovered?
+What is the main difference between Java and C++?
+What do you understand about Object Oriented Programming (OOP)? Use Java examples.
+What are the main differences between versions 1.5 and version 1.6 of Java?
+Describe what happens to a MapReduce job from submission to output?
+How would you tackle counting words in several text documents?	
+How will you write a custom partitioner for a Hadoop job?
+How did you debug your Hadoop code ?
+how would you modify that solution to only count the number of unique words in all the documents?
